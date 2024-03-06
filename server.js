@@ -3,6 +3,18 @@ import express from 'express';
 import path from 'path';
 
 const app = express();
+app.get('/', (req, res) => {
+  const city = 'Dubai';
+  const bedrooms = 2;
+  const bathrooms = 1;
+
+  try {
+    const listings = getListings(city, bedrooms, bathrooms);
+    res.send(listings);
+  } catch (e) {
+    res.status(400).send({ error: e.message });
+  }
+});
 
 app.get('/get-listings', (req, res) => {
   const city = req.query.city;

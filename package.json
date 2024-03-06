@@ -1,6 +1,9 @@
 {
   "name": "contoso-real-estate-plugin",
   "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
   "dependencies": {
     "express": "^4.18.3"
   }

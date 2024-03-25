@@ -4,6 +4,10 @@ import path from 'path';
 
 const app = express();
 app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
+});
+
+app.get('/get-dubai', (req, res) => {
   const city = 'Dubai';
   const bedrooms = 2;
   const bathrooms = 1;

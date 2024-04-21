@@ -17,7 +17,7 @@ app.get('/get-dubai', (req, res) => {
   const bedrooms = 5;
 
   try {
-    const listings = getListings(city);
+    const listings = getListings(city, bedrooms);
     res.send(listings);
   } catch (e) {
     res.status(400).send({ error: e.message });

@@ -1,4 +1,4 @@
-import listings from './listings.json' assert { type: 'json' };
+import listings from './listings-v2.json' assert { type: 'json' };
 
 // Return only the first 5 results.
 const RESULT_LIMIT = 5;

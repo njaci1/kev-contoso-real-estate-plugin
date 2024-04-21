@@ -67,7 +67,7 @@ app.get('/bookings', (req, res) => {
 });
 
 app.post('/post-a-booking', (req, res) => {
-  const propertyId = req.body['property-id'];
+  const propertyId = req.body['property-id'] ? req.body['property-id'] : 0;
 
   // Generate date-time for the next day at 14:00 hrs
   const dateTime = new Date();

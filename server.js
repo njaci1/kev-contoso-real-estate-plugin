@@ -14,6 +14,7 @@ app.get('/', (req, res) => {
 
 app.get('/get-dubai', (req, res) => {
   const city = 'Dubai';
+  const bedrooms = 5;
 
   try {
     const listings = getListings(city);

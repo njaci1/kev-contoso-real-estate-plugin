@@ -68,6 +68,49 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Property'
+  /post-a-booking:
+    post:
+      operationId: postBooking
+      summary: Add a new booking
+      description: Adds a new booking with the specified property ID and a date-time for the next day at 14:00 hrs.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                property-id:
+                  type: string
+                  description: The ID of the property to book.
+      responses:
+        '200':
+          description: Booking has been successfully added.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+  /bookings:
+    get:
+      operationId: getLastBooking
+      summary: Get the last booking
+      description: Returns the last booking added to the system.
+      responses:
+        '200':
+          description: The last booking
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  property-id:
+                    type: string
+                  date-time:
+                    type: string
+                    format: date-time
 components:
   schemas:
     AmenitiesEnum:

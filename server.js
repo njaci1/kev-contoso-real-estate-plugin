@@ -3,6 +3,7 @@ import express from 'express';
 import path from 'path';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
+import fs from 'fs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -52,6 +53,42 @@ app.get('/.well-known/ai-plugin.json', (req, res) => {
 
 app.get('/logo.png', (req, res) => {
   res.sendFile(path.resolve() + '/logo.png');
+});
+
+app.get('/bookings', (req, res) => {
+  // Load and parse the bookings.json file
+  let data = fs.readFileSync('bookings.json');
+  let bookings = JSON.parse(data);
+
+  // Get the last booking
+  let lastBooking = bookings[bookings.length - 1];
+
+  res.send(lastBooking);
+});
+
+app.post('/post-a-booking', (req, res) => {
+  const propertyId = req.body['property-id'];
+
+  // Generate date-time for the next day at 14:00 hrs
+  const dateTime = new Date();
+  dateTime.setDate(dateTime.getDate() + 1);
+  dateTime.setHours(14, 0, 0, 0);
+
+  // Load and parse the bookings.json file
+  let data = fs.readFileSync('bookings.json');
+  let bookings = JSON.parse(data);
+
+  // Add the new booking
+  bookings.push({
+    'property-id': propertyId,
+    'date-time': dateTime.toISOString(),
+  });
+
+  // Convert back to JSON and write to the file
+  data = JSON.stringify(bookings, null, 2);
+  fs.writeFileSync('bookings.json', data);
+
+  res.send({ message: 'Booking has been successfully added.' });
 });
 
 app.listen(process.env.PORT || 8080);

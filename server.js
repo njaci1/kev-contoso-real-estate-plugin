@@ -42,6 +42,10 @@ app.get('/openapi.yaml', (req, res) => {
   res.sendFile(path.resolve() + '/openapi.yaml');
 });
 
+app.get('/openapi-v2.yaml', (req, res) => {
+  res.sendFile(path.resolve() + '/openapi-v2.yaml');
+});
+
 app.get('/.well-known/ai-plugin.json', (req, res) => {
   res.sendFile(path.resolve() + '/ai-plugin.json');
 });

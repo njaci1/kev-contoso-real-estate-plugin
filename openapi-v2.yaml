@@ -19,7 +19,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Listing'
+                  $ref: '#/components/schemas/Property'
         '400':
           description: Error message
           content:

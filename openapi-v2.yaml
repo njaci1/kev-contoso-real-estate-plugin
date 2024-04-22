@@ -11,6 +11,19 @@ paths:
       operationId: getDubaiListings
       summary: Get listings in Dubai
       description: Returns a list of real estate listings with five bedrooms in Dubai.
+      parameters:
+        - name: city
+          in: query
+          description: The city to search in
+          required: false
+          schema:
+            type: string
+        - name: bedrooms
+          in: query
+          description: The number of bedrooms
+          required: false
+          schema:
+            type: integer
       responses:
         '200':
           description: A list of listings in Dubai
@@ -98,6 +111,13 @@ paths:
       operationId: getLastBooking
       summary: Get the last booking
       description: Returns the last booking added to the system.
+      parameters:
+        - name: property-id
+          in: query
+          description: The ID of the property to search for
+          required: false
+          schema:
+            type: string
       responses:
         '200':
           description: The last booking

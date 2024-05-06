@@ -1,7 +1,6 @@
 openapi: 3.0.1
 info:
   title: Nationalize
-  # description: A plugin that estimates the nationality of a person based on a surname.
   version: 0.1.0
 servers:
   - url: https://api.nationalize.io/
@@ -9,7 +8,6 @@ paths:
   /:
     get:
       operationId: getNationality
-      # description: Gets the probable nationality given the person's surname.
       parameters:
         - name: name
           in: query

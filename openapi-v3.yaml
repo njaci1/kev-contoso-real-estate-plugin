@@ -49,7 +49,7 @@ paths:
     post:
       operationId: postBooking
       summary: Add a new booking
-      description: Adds a new booking with the specified property ID and a date-time for the next day at 14:00 hrs.
+      description: Adds a new booking with the specified property ID, customerName, city and a date-time for the next day at 14:00 hrs.
       requestBody:
         required: true
         content:
@@ -60,6 +60,12 @@ paths:
                 property-id:
                   type: string
                   description: The ID of the property to book.
+                customerName:
+                  type: string
+                  description: The name of the customer who is making the booking.
+                city:
+                  type: string
+                  description: The city where the booking is being made.
       responses:
         '200':
           description: Booking has been successfully added.

@@ -1,7 +1,37 @@
 [
   {
+    "id": 0,
+    "property-id": "HOU-001",
+    "city": "Houston",
+    "customer-name": "John Doe",
+    "date-time": "2019-01-01T00:00:00Z"
+  },
+  {
     "id": 1,
-    "property-id": 0,
+    "property-id": "ABJ-001",
+    "city": "Abuja",
+    "customer-name": "Meghan Markle",
+    "date-time": "2019-01-01T00:00:00Z"
+  },
+  {
+    "id": 2,
+    "property-id": "KIN-001",
+    "city": "Kinagop",
+    "customer-name": "Msampeke Mwakaleli",
+    "date-time": "2019-01-01T00:00:00Z"
+  },
+  {
+    "id": 3,
+    "property-id": "MAS-001",
+    "city": "Mashuru",
+    "customer-name": "Fatma Mwale",
+    "date-time": "2019-01-01T00:00:00Z"
+  },
+  {
+    "id": 4,
+    "property-id": "EMA-001",
+    "city": "Emali",
+    "customer-name": "Madaraka Nyerere",
     "date-time": "2019-01-01T00:00:00Z"
   }
 ]

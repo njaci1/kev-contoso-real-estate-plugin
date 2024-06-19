@@ -1,4 +1,5 @@
 import getListings from './get-listings.js';
+import getBookings from './get-bookings.js';
 import express from 'express';
 import path from 'path';
 import { dirname } from 'path';
@@ -59,12 +60,14 @@ app.get('/logo.png', (req, res) => {
 });
 
 app.get('/bookings', (req, res) => {
-  // Load and parse the bookings.json file
-  let data = fs.readFileSync('bookings.json');
-  let bookings = JSON.parse(data);
-
-  // Get the last booking
-  let lastBooking = bookings[bookings.length - 1];
+  const customerName = req.query.customerName;
+  const city = req.query.city;
+  try {
+    const bookings = getBookings(customerName, city);
+    res.send(bookings);
+  } catch (e) {
+    res.status(400).send({ error: e.message });
+  }
 
   res.send(lastBooking);
 });

@@ -47,6 +47,11 @@ app.get('/openapi.yaml', (req, res) => {
 app.get('/openapi-v2.yaml', (req, res) => {
   res.sendFile(path.resolve() + '/openapi-v2.yaml');
 });
+
+app.get('/openapi-v3.yaml', (req, res) => {
+  res.sendFile(path.resolve() + '/openapi-v3.yaml');
+});
+
 app.get('/nationality.yaml', (req, res) => {
   res.sendFile(path.resolve() + '/nationality.yaml');
 });

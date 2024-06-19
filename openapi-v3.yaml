@@ -2,46 +2,10 @@ openapi: 3.0.1
 info:
   title: Contoso Real Estate API
   description: Finds up to date and detailed real estate properties for sale on the market
-  version: 0.2.0
+  version: 0.3.0
 servers:
   - url: https://kev-contoso-real-estate-plugin-app.azurewebsites.net
 paths:
-  /get-dubai:
-    get:
-      operationId: getDubaiListings
-      summary: Get listings in Dubai
-      description: Returns a list of real estate listings with five bedrooms in Dubai.
-      parameters:
-        - name: city
-          in: query
-          description: The city to search in
-          required: false
-          schema:
-            type: string
-        - name: bedrooms
-          in: query
-          description: The number of bedrooms
-          required: false
-          schema:
-            type: integer
-      responses:
-        '200':
-          description: A list of listings in Dubai
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Property'
-        '400':
-          description: Error message
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  error:
-                    type: string
   /get-listings:
     get:
       operationId: getListings
@@ -108,29 +72,52 @@ paths:
                     type: string
   /bookings:
     get:
-      operationId: getLastBooking
-      summary: Get the last booking
-      description: Returns the last booking added to the system.
+      operationId: getBookings
+      summary: Get a list of bookings
+      description: Retrieve a list of bookings. You can filter the list by customer name and city.
       parameters:
-        - name: property-id
-          in: query
-          description: The ID of the property to search for
-          required: false
+        - in: query
+          name: customerName
           schema:
             type: string
+          description: The name of the customer to filter by.
+        - in: query
+          name: city
+          schema:
+            type: string
+          description: The city to filter by.
       responses:
         '200':
-          description: The last booking
+          description: A list of bookings.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      description: The booking ID.
+                    customerName:
+                      type: string
+                      description: The name of the customer who made the booking.
+                    city:
+                      type: string
+                      description: The city where the booking is made.
+                    date:
+                      type: string
+                      format: date-time
+                      description: The date and time of the booking.
+        '400':
+          description: There was a problem retrieving the bookings.
           content:
             application/json:
               schema:
                 type: object
                 properties:
-                  property-id:
+                  error:
                     type: string
-                  date-time:
-                    type: string
-                    format: date-time
 components:
   schemas:
     AmenitiesEnum:

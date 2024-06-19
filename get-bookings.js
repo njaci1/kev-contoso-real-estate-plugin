@@ -10,12 +10,12 @@ export default function getBookings(customer, city) {
         : true;
 
       const customerMatch = customer
-        ? booking.customer_name.toLowerCase() === customer.toLowerCase()
+        ? booking.customerName.toLowerCase() === customer.toLowerCase()
         : true;
 
       const idMatch = booking.id;
-      const propertyIdMatch = booking.property_id;
-      const dateMatch = booking.date - time;
+      const propertyIdMatch = booking.propertyId;
+      const dateMatch = booking.dateTime;
 
       return (
         cityMatch && customerMatch && idMatch && propertyIdMatch && dateMatch

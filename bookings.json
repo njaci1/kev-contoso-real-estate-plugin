@@ -1,37 +1,37 @@
 [
   {
     "id": 0,
-    "property-id": "HOU-001",
+    "propertyId": "HOU-001",
     "city": "Houston",
-    "customer-name": "John Doe",
-    "date-time": "2019-01-01T00:00:00Z"
+    "customerName": "John Doe",
+    "dateTime": "2019-01-01T00:00:00Z"
   },
   {
     "id": 1,
-    "property-id": "ABJ-001",
+    "propertyId": "ABJ-001",
     "city": "Abuja",
-    "customer-name": "Meghan Markle",
-    "date-time": "2019-01-01T00:00:00Z"
+    "customerName": "Meghan Markle",
+    "dateTime": "2019-01-01T00:00:00Z"
   },
   {
     "id": 2,
-    "property-id": "KIN-001",
+    "propertyId": "KIN-001",
     "city": "Kinagop",
-    "customer-name": "Msampeke Mwakaleli",
-    "date-time": "2019-01-01T00:00:00Z"
+    "customerName": "Msampeke Mwakaleli",
+    "dateTime": "2019-01-01T00:00:00Z"
   },
   {
     "id": 3,
-    "property-id": "MAS-001",
+    "propertyId": "MAS-001",
     "city": "Mashuru",
-    "customer-name": "Fatma Mwale",
+    "customerName": "Fatma Mwale",
     "date-time": "2019-01-01T00:00:00Z"
   },
   {
     "id": 4,
-    "property-id": "EMA-001",
+    "propertyId": "EMA-001",
     "city": "Emali",
-    "customer-name": "Madaraka Nyerere",
-    "date-time": "2019-01-01T00:00:00Z"
+    "customerName": "Madaraka Nyerere",
+    "dateTime": "2019-01-01T00:00:00Z"
   }
 ]

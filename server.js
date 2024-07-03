@@ -1,5 +1,6 @@
 import getListings from './get-listings.js';
 import getBookings from './get-bookings.js';
+import currentBookings from './bookings.json' assert { type: 'json' };
 import express from 'express';
 import path from 'path';
 import { dirname } from 'path';
@@ -86,7 +87,7 @@ app.post('/post-a-booking', (req, res) => {
   dateTime.setHours(14, 0, 0, 0);
 
   // Load and parse the bookings.json file
-  let data = fs.readFileSync('bookings.json');
+  let data = fs.readFileSync(currentBookings);
   let bookings = JSON.parse(data);
 
   // Add the new booking

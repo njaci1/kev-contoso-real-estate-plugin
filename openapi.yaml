@@ -1,6 +1,6 @@
 openapi: 3.0.1
 info:
-  title: Contoso Real Estate API
+  title: Maridadi Real Estate API
   description: Finds up to date and detailed real estate properties for sale on the market
   version: 0.1.0
 servers:
